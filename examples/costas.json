@@ -1,0 +1,14 @@
+{
+  "gpg-keyid": "DEADBEEF",
+  "base-diretory": "/home/YOUR-USER/",
+  "directories": [
+    "Downloads",
+    "Documents/Programming",
+    "Documents/Work",
+    "Desktop"
+  ],
+  "ignore": [
+    "Documents/Programming/LLVM-ICMC-backend"
+  ],
+  "output-directory": "/tmp/"
+}
