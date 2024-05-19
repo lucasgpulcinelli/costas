@@ -21,15 +21,15 @@ def main(options):
     for d in directories:
         assert os.path.isdir(os.path.join(base_dir, d))
     for i in ignore:
-        assert os.path.exists(i)
+        assert os.path.exists(os.path.join(base_dir, i))
     assert os.path.isdir(output_directory)
 
-    filename = datetime.date.today().strftime("%y-%m-%d")
+    filename = datetime.date.today().strftime("%Y-%m-%d")
 
     args = ["tar"]
     for i in ignore:
-        args.append(f"--exclude='{base_dir}'")
-    args.extend(["czf", "-"])
+        args.append(f'--exclude={i}')
+    args.extend(["-czf", "-"])
     args.extend(directories)
 
     tarout = Popen(args, cwd=base_dir, stdout=PIPE)
